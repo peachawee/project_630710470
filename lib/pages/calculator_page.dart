@@ -64,25 +64,31 @@ class _CalPageState extends State<CalPage> {
                       ),
                     ),
                     SizedBox(width: 25.0),
-                    Text(
-                      "Calculator!",
-                      style: TextStyle(
-                        fontSize: 40.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                    Expanded(
+                      child: Text(
+                        "Calculator!",
+                        style: TextStyle(
+                          fontSize: 40.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                     //SizedBox(width:),
-                    SizedBox(width: 30.0,),
-                    FlatButton(
-                      height: 65.0,
-                      minWidth: 60.0,
-                      color: Colors.indigo[600],
-                      textColor: Colors.yellow[700],
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomePage()));
-                      },
-                      child: Icon(Icons.home_rounded),
+
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.indigo[600],
+                          onPrimary: Colors.yellow[700],
+                          minimumSize: Size(60.0, 65.0),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomePage()));
+                        },
+                        child: Icon(Icons.home_rounded),
+                      ),
                     ),
                   ],
                 ),

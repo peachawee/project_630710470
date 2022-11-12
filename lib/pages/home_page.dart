@@ -84,9 +84,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                     //SizedBox(width:),
 
-                    RaisedButton(
-                      color: Colors.indigo[400],
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                      primary: Colors.indigo[400],
+                      onPrimary: Colors.black,
                       shape: CircleBorder(),
+                      ),
                       child: Icon(Icons.menu_book_outlined, size: 18.0),
                       onPressed: () {
                         showDialog(
@@ -391,11 +394,12 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Material(
-                        child: FlatButton(
-                          height: 45.0,
-                          minWidth: 80.0,
-                          color: Colors.yellow[700],
-                          textColor: Colors.black,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                          primary: Colors.yellow[700],
+                          onPrimary: Colors.black,
+                            minimumSize: Size(45.0, 45.0),
+                          ),
                           onPressed: () {
                             doResult();
                             doAvg();
@@ -410,16 +414,17 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(
                       width: 15.0,
                     ),
-                    FlatButton(
-                      height: 65.0,
-                      minWidth: 60.0,
-                      color: Colors.black,
-                      textColor: Colors.deepOrange,
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black,
+                        onPrimary: Colors.deepOrange,
+                          minimumSize: Size(60.0, 65.0),
+                      ),
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: (context) => CalPage()));
                       },
-                      child: Icon(Icons.calculate),
+                      child: Icon(Icons.calculate,size: 30.0),
                     ),
                   ],
                 ),
